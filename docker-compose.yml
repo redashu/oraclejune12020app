@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+ ashuweb1:
+  image: ashuday3:webappv2   #  image name we want to build  if not present 
+  build:    #  location of dockerfile 
+   context: .   #  location of dockerfile
+   dockerfile: ashu.dockerfile  #  name of  dockerfile
+  container_name: ashuwebc11
+  ports:
+   - "7711:80"
+  networks:
+   - ashubrx1  #  here we are using  network 
+
+networks:
+ ashubrx1:     #  creating  new bridge with custom name 
